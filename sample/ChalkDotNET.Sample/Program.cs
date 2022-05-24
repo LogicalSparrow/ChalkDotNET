@@ -1,0 +1,58 @@
+﻿using System;
+using ChalkDotNET;
+Console.WriteLine("Welcome ChalkDotNET users!");
+Console.WriteLine("This package is inspired by the chalk package for node.js:");
+Console.WriteLine("https://www.npmjs.com/package/chalk");
+Console.WriteLine("I was hoping to have identical syntax to the chalk package for node.js but one issue came up:");
+Console.WriteLine(Chalk.White("1. ") + Chalk.Red("Since a name can't be shared between a property and a method that returns a different type,\r\n\tI couldn't copy the syntax from the original chalk exactly."));
+Console.WriteLine(Chalk.Default("Therefore, color changes will be methods so they can have overloads."));
+
+Console.WriteLine();
+Console.WriteLine("Some examples:");
+Console.WriteLine(Chalk.Yellow("My") + " " + Chalk.Red().BgWhite("name") + " " + Chalk.Blue("is") + " " + Chalk.Underline("Bob."));
+
+ChalkedStringBuilder sb = new ChalkedStringBuilder();
+sb.Append("ChalkedStringBuilder");
+sb.AppendLine(Chalk.Green(" works"));
+sb.Append(Chalk.BgGreen("too!"));
+Console.WriteLine(sb);
+
+Console.WriteLine(Chalk.Underline().Cyan("Underline works!"));
+
+var w = (object o) => Console.Write(o);
+var wl = (object o) => Console.WriteLine(o);
+wl("Foreground colors:");
+w(Chalk.White("White\t"));
+wl(Chalk.Gray("Gray"));
+w(Chalk.DarkGray("Dark Gray\t"));
+wl(Chalk.Black().BgWhite("Black"));
+w(Chalk.Red("Red\t"));
+wl(Chalk.DarkRed("Dark Red"));
+w(Chalk.Blue("Blue\t"));
+wl(Chalk.DarkBlue("Dark Blue"));
+w(Chalk.Cyan("Cyan\t"));
+wl(Chalk.DarkCyan("Dark Cyan"));
+w(Chalk.Green("Green\t"));
+wl(Chalk.DarkGreen("Dark Green"));
+w(Chalk.Yellow("Yellow\t"));
+wl(Chalk.DarkYellow("Dark Yellow"));
+w(Chalk.Magenta("Magenta\t"));
+wl(Chalk.DarkMagenta("Dark Magenta"));
+wl("");
+wl("Background colors:");
+w(Chalk.Black().BgWhite("White   "));
+wl(Chalk.Black().BgGray("Gray"));
+w(Chalk.BgDarkGray("Dark Gray\t"));
+wl(Chalk.BgBlack().White("Black"));
+w(Chalk.BgRed("Red\t"));
+wl(Chalk.BgDarkRed("Dark Red"));
+w(Chalk.BgBlue("Blue\t"));
+wl(Chalk.BgDarkBlue("Dark Blue"));
+w(Chalk.Black().BgCyan("Cyan\t"));
+wl(Chalk.BgDarkCyan("Dark Cyan"));
+w(Chalk.BgGreen("Green\t"));
+wl(Chalk.BgDarkGreen("Dark Green"));
+w(Chalk.Black().BgYellow("Yellow\t"));
+wl(Chalk.Black().BgDarkYellow("Dark Yellow"));
+w(Chalk.BgMagenta("Magenta\t"));
+wl(Chalk.BgDarkMagenta("Dark Magenta"));
