@@ -29,7 +29,7 @@ namespace ChalkDotNET.Tests
             ChalkedStringBuilder builder = Chalk.Red("msg1") + " " + Chalk.Green("msg2") + " " + Chalk.Blue("msg3");
             builder.Messages.Count.Should().Be(5);
             builder.Messages.ToArray()[2].Message.Should().Be("msg2");
-            builder.WriteLine();
+            Console.WriteLine(builder);
             Console.ForegroundColor.Should().Be(Style.DefaultForegroundColor);
         }
 
