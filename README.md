@@ -5,7 +5,13 @@ This library mimics the [chalk](https://www.npmjs.com/package/chalk) library for
 
 ### Examples:
 ```csharp
-Console.WriteLine(Chalk.Yellow("My") + " " + Chalk.Red().BgWhite("name") + " " + Chalk.Blue("is") + " " + Chalk.Underline("Bob."));
+using static ChalkDotNET.Chalk;
+
+Console.WriteLine(Yellow("My") + " " + Red().BgWhite("name") + " " + Blue("is") + " " + Underline("Bob."));
+```
+
+```csharp
+using ChalkDotNET;
 
 ChalkedStringBuilder sb = new ChalkedStringBuilder();
 sb.Append("ChalkedStringBuilder");
